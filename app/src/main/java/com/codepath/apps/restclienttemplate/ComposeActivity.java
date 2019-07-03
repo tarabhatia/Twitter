@@ -3,10 +3,13 @@ package com.codepath.apps.restclienttemplate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -23,6 +26,7 @@ public class ComposeActivity extends AppCompatActivity {
     EditText etTweetInput;
     Button btnSend;
     TwitterClient client;
+    TextView tvCounter;
 
 
     @Override
@@ -32,6 +36,7 @@ public class ComposeActivity extends AppCompatActivity {
 
         etTweetInput = findViewById(R.id.etTweetInput);
         btnSend = findViewById(R.id.btnSend);
+        tvCounter = findViewById(R.id.tvCounter);
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +45,29 @@ public class ComposeActivity extends AppCompatActivity {
             }
 
         });
+
+        etTweetInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String charLeft = Integer.toString(240 - s.length());
+                tvCounter.setText(charLeft);
+
+            }
+        });
+
+
+
+
         client = TwitterApp.getRestClient(this);
 
 

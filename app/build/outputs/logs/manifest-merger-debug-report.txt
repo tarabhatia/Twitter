@@ -5,6 +5,7 @@ INJECTED from /Users/tarabhatia/Desktop/AndroidStudioProjects/Twitter/app/src/ma
 INJECTED from /Users/tarabhatia/Desktop/AndroidStudioProjects/Twitter/app/src/main/AndroidManifest.xml:2:1-41:12
 INJECTED from /Users/tarabhatia/Desktop/AndroidStudioProjects/Twitter/app/src/main/AndroidManifest.xml:2:1-41:12
 MERGED from [com.codepath.libraries:android-oauth-handler:1.4.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/65bdfb9764f91736fd8be5fd34e0e076/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/0c5a8f13c97af2c1e18d86d7cd593ca4/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/ab56b0ef403d7f35f8d239bc06b68907/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/6465dd43f9fee6c04e004bb6ff987073/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/8b15cabc7b5bc8ebcc5ada731a28deca/AndroidManifest.xml:2:1-11:12
@@ -16,6 +17,7 @@ MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/tarabha
 MERGED from [com.android.support:support-core-ui:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/0162d83d60fb630d9a827150eae6ba3b/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/2e70311f202b0647d904a169626dea95/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/91aa39660af1077f57220e1771e49923/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/ed3b8a63cb5456d24f13bc0581f9cf91/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/9ef26748a748221558ac85e93754235c/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/17597ec9e6e65c34f836d53195ac667a/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:viewpager:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/2be7782f570a9e01a527109cf5a658b1/AndroidManifest.xml:17:1-22:12
@@ -33,6 +35,7 @@ MERGED from [android.arch.persistence:db:1.1.1] /Users/tarabhatia/.gradle/caches
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/4211f42c15fe39af46430bedb5774df9/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/bc1f614664ca13c4bdaf9d97190d5a05/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/629ce153f65c25061e55665cf7d4b787/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/7bee9a6adc9b7dab7c9f1196193260e3/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/92d8c5510a2e55a5e34f9a90f878a9bb/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:documentfile:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/8a27af1f04cdabc6ca4c08fde7101226/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/33f02221dc4a9956ebc0de8a0fb44a6a/AndroidManifest.xml:17:1-22:12
@@ -66,6 +69,8 @@ ADDED from /Users/tarabhatia/Desktop/AndroidStudioProjects/Twitter/app/src/main/
 		ADDED from /Users/tarabhatia/Desktop/AndroidStudioProjects/Twitter/app/src/main/AndroidManifest.xml:8:22-78
 application
 ADDED from /Users/tarabhatia/Desktop/AndroidStudioProjects/Twitter/app/src/main/AndroidManifest.xml:10:5-39:19
+MERGED from [com.android.support:design:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/0c5a8f13c97af2c1e18d86d7cd593ca4/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/0c5a8f13c97af2c1e18d86d7cd593ca4/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/8b15cabc7b5bc8ebcc5ada731a28deca/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/8b15cabc7b5bc8ebcc5ada731a28deca/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.stetho:stetho:1.5.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/de6abdf00c84432e9da38ef5c3e50d22/AndroidManifest.xml:11:5-20
@@ -140,6 +145,8 @@ INJECTED from /Users/tarabhatia/Desktop/AndroidStudioProjects/Twitter/app/src/ma
 INJECTED from /Users/tarabhatia/Desktop/AndroidStudioProjects/Twitter/app/src/main/AndroidManifest.xml
 MERGED from [com.codepath.libraries:android-oauth-handler:1.4.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/65bdfb9764f91736fd8be5fd34e0e076/AndroidManifest.xml:7:5-9:41
 MERGED from [com.codepath.libraries:android-oauth-handler:1.4.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/65bdfb9764f91736fd8be5fd34e0e076/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/0c5a8f13c97af2c1e18d86d7cd593ca4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/0c5a8f13c97af2c1e18d86d7cd593ca4/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/ab56b0ef403d7f35f8d239bc06b68907/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/ab56b0ef403d7f35f8d239bc06b68907/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/6465dd43f9fee6c04e004bb6ff987073/AndroidManifest.xml:20:5-44
@@ -162,6 +169,8 @@ MERGED from [com.android.support:support-core-utils:28.0.0] /Users/tarabhatia/.g
 MERGED from [com.android.support:support-core-utils:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/2e70311f202b0647d904a169626dea95/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/91aa39660af1077f57220e1771e49923/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/91aa39660af1077f57220e1771e49923/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/ed3b8a63cb5456d24f13bc0581f9cf91/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/ed3b8a63cb5456d24f13bc0581f9cf91/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/9ef26748a748221558ac85e93754235c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/9ef26748a748221558ac85e93754235c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/17597ec9e6e65c34f836d53195ac667a/AndroidManifest.xml:20:5-44
@@ -196,6 +205,8 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/tarabhatia/.grad
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/bc1f614664ca13c4bdaf9d97190d5a05/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/629ce153f65c25061e55665cf7d4b787/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/629ce153f65c25061e55665cf7d4b787/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/7bee9a6adc9b7dab7c9f1196193260e3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/7bee9a6adc9b7dab7c9f1196193260e3/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/92d8c5510a2e55a5e34f9a90f878a9bb/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/92d8c5510a2e55a5e34f9a90f878a9bb/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/8a27af1f04cdabc6ca4c08fde7101226/AndroidManifest.xml:20:5-44
