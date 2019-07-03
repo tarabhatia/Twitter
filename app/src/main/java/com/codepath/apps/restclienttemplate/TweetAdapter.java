@@ -1,6 +1,7 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
@@ -11,7 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.codepath.apps.restclienttemplate.models.DetailsActivity;
 import com.codepath.apps.restclienttemplate.models.Tweet;
+
+import org.parceler.Parcels;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,6 +43,8 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         return viewHolder;
     }
 
+
+
     // bind the values based on the position of the element
 
     @Override
@@ -60,12 +66,31 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
     }
 
     // create the ViewHolder class
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
         public ImageView ivProfileImage;
         public TextView tvUsername;
         public TextView tvBody;
         public TextView tvDate;
         public TextView tvScreenName;
+
+        @Override
+        public void onClick(View v) {
+            // get the position
+            int position = getAdapterPosition();
+            // ensures it's valid
+            if (position != RecyclerView.NO_POSITION) {
+                // get movies at the position in list
+                Tweet tweet = mTweets.get(position);
+                // creates an intent to display movie details activity
+                Intent intent = new Intent(context, DetailsActivity.class);
+                // passes the movie as an extra serialized via Parcels.wrap();
+                intent.putExtra(Tweet.class.getSimpleName(), Parcels.wrap(tweet));
+                // shows activity
+                context.startActivity(intent);
+            }
+
+        }
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -76,6 +101,8 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
             tvBody = itemView.findViewById(R.id.tvBody);
             tvDate = itemView.findViewById(R.id.tvDate);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
+
+            itemView.setOnClickListener(this);
 
 
         }

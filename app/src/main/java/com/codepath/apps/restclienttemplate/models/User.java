@@ -13,6 +13,22 @@ public class User {
     public String screenName;
     public String profileImageUrl;
 
+    public String getName() {
+        return name;
+    }
+
+    public long getUid() {
+        return uid;
+    }
+
+    public String getScreenName() {
+        return screenName;
+    }
+
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
     //deserialize the JSON
     public static User fromJSON(JSONObject json) throws JSONException {
         User user = new User();

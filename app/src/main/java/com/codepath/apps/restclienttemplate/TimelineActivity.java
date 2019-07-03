@@ -33,6 +33,8 @@ public class TimelineActivity extends AppCompatActivity {
     ArrayList<Tweet> tweets;
     RecyclerView rvTweets;
     SwipeRefreshLayout swipeContainer;
+    MenuItem miActionProgressItem;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,30 +58,8 @@ public class TimelineActivity extends AppCompatActivity {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
-    }
-
-    public void fetchTimelineAsync(int page) {
-        // Send the network request to fetch the updated data
-        // `client` here is an instance of Android Async HTTP
-        // getHomeTimeline is an example endpoint.
-        client.getHomeTimeline(new JsonHttpResponseHandler() {
-            public void onSuccess(JSONArray json) {
-                // Remember to CLEAR OUT old items before appending in the new ones
-                tweetAdapter.clear();
-                // ...the data has come back, add new items to your adapter...
-                tweetAdapter.addAll(tweets);
-                // Now we call setRefreshing(false) to signal refresh has finished
-                swipeContainer.setRefreshing(false);
-            }
-
-            public void onFailure(Throwable e) {
-                Log.d("DEBUG", "Fetch timeline error: " + e.toString());
-            }
-        });
-
 
         client = TwitterApp.getRestClient(this);
-        populateTimeline();
 
         // find the RecyclerView
         rvTweets = findViewById(R.id.rvTweet);
@@ -91,8 +71,61 @@ public class TimelineActivity extends AppCompatActivity {
         rvTweets.setLayoutManager(new LinearLayoutManager(this));
         // set the adapter
         rvTweets.setAdapter(tweetAdapter);
+    }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // Store instance of the menu item containing progress
+        miActionProgressItem = menu.findItem(R.id.miActionProgress);
+        showProgressBar();
         populateTimeline();
+        hideProgressBar();
+
+        // Return to finish
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    public void showProgressBar() {
+        // Show progress item
+        miActionProgressItem.setVisible(true);
+    }
+
+    public void hideProgressBar() {
+        // Hide progress item
+        miActionProgressItem.setVisible(false);
+    }
+
+    public void fetchTimelineAsync(int page) {
+        // Send the network request to fetch the updated data
+        // `client` here is an instance of Android Async HTTP
+        // getHomeTimeline is an example endpoint.
+        client.getHomeTimeline(new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                    // Remember to CLEAR OUT old items before appending in the new ones
+                tweetAdapter.clear();
+
+                for (int i = 0; i < response.length(); i++) {
+                    // convert each object to a tweet model
+                    // add that tweet model to data source
+                    // notify the adapter we added an item
+                    try {
+                        Tweet tweet = Tweet.fromJSON(response.getJSONObject(i));
+                        tweets.add(tweet);
+                        tweetAdapter.notifyItemInserted(tweets.size() - 1);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                    // Now we call setRefreshing(false) to signal refresh has finished
+                    swipeContainer.setRefreshing(false);
+                }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray e) {
+                Log.d("DEBUG", "Fetch timeline error: " + e.toString());
+                showProgressBar();
+            }
+        });
 
     }
 
@@ -161,6 +194,7 @@ public class TimelineActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+
             }
 
             @Override
