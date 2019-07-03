@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="49dp">
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvTweet"
         android:layout_width="match_parent"
@@ -13,5 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </android.support.constraint.ConstraintLayout>

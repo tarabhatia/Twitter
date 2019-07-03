@@ -3,6 +3,7 @@ package com.codepath.apps.restclienttemplate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,11 +32,51 @@ public class TimelineActivity extends AppCompatActivity {
     TweetAdapter tweetAdapter;
     ArrayList<Tweet> tweets;
     RecyclerView rvTweets;
+    SwipeRefreshLayout swipeContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+
+        // Lookup the swipe container view
+        swipeContainer = findViewById(R.id.swipeContainer);
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                fetchTimelineAsync(0);
+            }
+        });
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+    }
+
+    public void fetchTimelineAsync(int page) {
+        // Send the network request to fetch the updated data
+        // `client` here is an instance of Android Async HTTP
+        // getHomeTimeline is an example endpoint.
+        client.getHomeTimeline(new JsonHttpResponseHandler() {
+            public void onSuccess(JSONArray json) {
+                // Remember to CLEAR OUT old items before appending in the new ones
+                tweetAdapter.clear();
+                // ...the data has come back, add new items to your adapter...
+                tweetAdapter.addAll(tweets);
+                // Now we call setRefreshing(false) to signal refresh has finished
+                swipeContainer.setRefreshing(false);
+            }
+
+            public void onFailure(Throwable e) {
+                Log.d("DEBUG", "Fetch timeline error: " + e.toString());
+            }
+        });
+
 
         client = TwitterApp.getRestClient(this);
         populateTimeline();
@@ -54,6 +95,7 @@ public class TimelineActivity extends AppCompatActivity {
         populateTimeline();
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
