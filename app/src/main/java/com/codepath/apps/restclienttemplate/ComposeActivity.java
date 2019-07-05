@@ -18,25 +18,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcels;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
 public class ComposeActivity extends AppCompatActivity {
 
     public static final String RESULT_TWEET = "result_tweet";
-    EditText etTweetInput;
-    Button btnSend;
+    @BindView(R.id.etTweetInput)EditText etTweetInput;
+    @BindView(R.id.btnSend)Button btnSend;
     TwitterClient client;
-    TextView tvCounter;
+    @BindView(R.id.tvCounter)TextView tvCounter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose);
-
-        etTweetInput = findViewById(R.id.etTweetInput);
-        btnSend = findViewById(R.id.btnSend);
-        tvCounter = findViewById(R.id.tvCounter);
+        ButterKnife.bind(this);
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override

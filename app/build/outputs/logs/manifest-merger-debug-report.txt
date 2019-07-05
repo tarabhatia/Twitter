@@ -11,6 +11,7 @@ MERGED from [android.arch.persistence.room:runtime:1.1.1] /Users/tarabhatia/.gra
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/8b15cabc7b5bc8ebcc5ada731a28deca/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.stetho:stetho:1.5.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/de6abdf00c84432e9da38ef5c3e50d22/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/97f511f2fb45ac5c9f00bc7293ad320c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.4.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/cd6af69f20d0614d6859b00381ae3d6a/AndroidManifest.xml:2:1-7:12
 MERGED from [com.android.support:support-v4:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/f616c7326bc078773e425561f530e5df/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/77fd023433c0b870733dfdbe8dc4841f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/deecba16d05a8f16b62a1bbb823cf493/AndroidManifest.xml:17:1-22:12
@@ -161,6 +162,8 @@ MERGED from [com.facebook.stetho:stetho:1.5.0] /Users/tarabhatia/.gradle/caches/
 MERGED from [com.facebook.stetho:stetho:1.5.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/de6abdf00c84432e9da38ef5c3e50d22/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/97f511f2fb45ac5c9f00bc7293ad320c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/97f511f2fb45ac5c9f00bc7293ad320c/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.4.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/cd6af69f20d0614d6859b00381ae3d6a/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.4.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/cd6af69f20d0614d6859b00381ae3d6a/AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-v4:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/f616c7326bc078773e425561f530e5df/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/f616c7326bc078773e425561f530e5df/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/tarabhatia/.gradle/caches/transforms-2/files-2.1/77fd023433c0b870733dfdbe8dc4841f/AndroidManifest.xml:20:5-44
