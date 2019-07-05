@@ -3,13 +3,16 @@ package com.codepath.apps.restclienttemplate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -34,12 +37,18 @@ public class TimelineActivity extends AppCompatActivity {
     RecyclerView rvTweets;
     SwipeRefreshLayout swipeContainer;
     MenuItem miActionProgressItem;
-
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+
+        // Find the toolbar view inside the activity layout
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
 
         // Lookup the swipe container view
         swipeContainer = findViewById(R.id.swipeContainer);
@@ -63,6 +72,7 @@ public class TimelineActivity extends AppCompatActivity {
 
         // find the RecyclerView
         rvTweets = findViewById(R.id.rvTweet);
+        fab = findViewById(R.id.fabCompose);
         // init the arraylist
         tweets = new ArrayList<>();
         // construct the adapter from this datasource
@@ -71,6 +81,14 @@ public class TimelineActivity extends AppCompatActivity {
         rvTweets.setLayoutManager(new LinearLayoutManager(this));
         // set the adapter
         rvTweets.setAdapter(tweetAdapter);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                composeMessage();
+
+            }
+        });
     }
 
     @Override
@@ -136,6 +154,11 @@ public class TimelineActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_timeline, menu);
         return true;
     }
+
+
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
