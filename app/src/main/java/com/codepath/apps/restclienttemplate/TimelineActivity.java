@@ -76,7 +76,7 @@ public class TimelineActivity extends AppCompatActivity {
         // init the arraylist
         tweets = new ArrayList<>();
         // construct the adapter from this datasource
-        tweetAdapter = new TweetAdapter(tweets);
+        tweetAdapter = new TweetAdapter(tweets, client);
         // RecyclerView setup (layout manager, use adapter)
         rvTweets.setLayoutManager(new LinearLayoutManager(this));
         // set the adapter
@@ -175,7 +175,7 @@ public class TimelineActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == COMPOSE_TWEET_REQUEST_CODE && resultCode == RESULT_OK) {
-            Tweet resultTweet = Parcels.unwrap(getIntent().getParcelableExtra(RESULT_TWEET));
+            Tweet resultTweet = Parcels.unwrap(data.getParcelableExtra(RESULT_TWEET));
 
             tweets.add(0, resultTweet);
             tweetAdapter.notifyItemInserted(0);

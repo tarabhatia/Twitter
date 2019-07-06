@@ -8,12 +8,14 @@ import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.models.DetailsActivity;
 import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.parceler.Parcels;
 
@@ -25,10 +27,13 @@ import java.util.Locale;
 public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
 
     private List<Tweet> mTweets;
+    private TwitterClient mClient;
     Context context;
     // pass in the Tweets array in the constructor
-    public TweetAdapter(List<Tweet> tweets) {
+    public TweetAdapter(List<Tweet> tweets, TwitterClient client) {
+
         mTweets = tweets;
+        mClient = client;
     }
     // for each row, inflate the layout and cache references into ViewHolder
 
@@ -48,15 +53,72 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
     // bind the values based on the position of the element
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int position) {
         // get the data according to position
-        Tweet tweet = mTweets.get(position);
+        final Tweet tweet = mTweets.get(position);
 
         //populate the views according to this data
         viewHolder.tvUsername.setText(tweet.user.name);
         viewHolder.tvBody.setText(tweet.body);
         viewHolder.tvDate.setText(getRelativeTimeAgo(tweet.createdAt));
         viewHolder.tvScreenName.setText('@' + tweet.user.screenName);
+
+        if (tweet.isRetweeted) {
+            viewHolder.imageButton2.setImageResource(R.drawable.ic_vector_retweet);
+        } else {
+            viewHolder.imageButton2.setImageResource(R.drawable.ic_vector_retweet_stroke);
+        }
+
+        if (tweet.isFavorited) {
+            viewHolder.imageButton.setImageResource(R.drawable.ic_vector_heart);
+        } else {
+            viewHolder.imageButton.setImageResource(R.drawable.ic_vector_heart_stroke);
+        }
+
+        viewHolder.tvFav.setText(Integer.toString(tweet.favoriteCount));
+        viewHolder.tvRetweet.setText(Integer.toString(tweet.retweetCount));
+
+
+        viewHolder.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tweet.isFavorited) {
+                   mClient.unFavoriteTweet(tweet.uid, new JsonHttpResponseHandler());
+                   viewHolder.imageButton.setImageResource(R.drawable.ic_vector_heart_stroke);
+                   tweet.isFavorited = false;
+                   tweet.favoriteCount--;
+                   viewHolder.tvFav.setText(Integer.toString(tweet.favoriteCount));
+                } else {
+                   mClient.favoriteTweet(tweet.uid, new JsonHttpResponseHandler());
+                    viewHolder.imageButton.setImageResource(R.drawable.ic_vector_heart);
+                    tweet.favoriteCount++;
+                    viewHolder.tvFav.setText(Integer.toString(tweet.favoriteCount));
+                }
+            }
+        });
+
+
+        viewHolder.imageButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tweet.isRetweeted) {
+                    mClient.unRetweetTweet(tweet.uid, new JsonHttpResponseHandler());
+                    viewHolder.imageButton2.setImageResource(R.drawable.ic_vector_retweet_stroke);
+                    tweet.isRetweeted = false;
+                    tweet.retweetCount--;
+                    viewHolder.tvFav.setText(Integer.toString(tweet.retweetCount));
+
+                } else {
+                    mClient.retweet(tweet.uid, new JsonHttpResponseHandler());
+                    viewHolder.imageButton2.setImageResource(R.drawable.ic_vector_retweet);
+                    tweet.retweetCount++;
+                    viewHolder.tvFav.setText(Integer.toString(tweet.retweetCount));
+
+                }
+            }
+        });
+
+
 
         Glide.with(context).load(tweet.user.profileImageUrl).into(viewHolder.ivProfileImage);
     }
@@ -73,6 +135,13 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         public TextView tvBody;
         public TextView tvDate;
         public TextView tvScreenName;
+        public ImageButton imageButton;
+        public ImageButton imageButton2;
+        public ImageButton imageButton3;
+        public TextView tvFav;
+        public TextView tvRetweet;
+
+
 
         @Override
         public void onClick(View v) {
@@ -101,6 +170,14 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
             tvBody = itemView.findViewById(R.id.tvBody);
             tvDate = itemView.findViewById(R.id.tvDate);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            imageButton = itemView.findViewById(R.id.imageButton);
+            imageButton2 = itemView.findViewById(R.id.imageButton2);
+            imageButton3 = itemView.findViewById(R.id.imageButton3);
+            tvRetweet = itemView.findViewById(R.id.tvRetweet);
+            tvFav = itemView.findViewById(R.id.tvFav);
+
+
+
 
             itemView.setOnClickListener(this);
 

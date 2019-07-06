@@ -25,6 +25,7 @@ import cz.msebera.android.httpclient.Header;
 public class ComposeActivity extends AppCompatActivity {
 
     public static final String RESULT_TWEET = "result_tweet";
+    private static final String TAG = "smth";
     @BindView(R.id.etTweetInput)EditText etTweetInput;
     @BindView(R.id.btnSend)Button btnSend;
     TwitterClient client;
@@ -96,7 +97,7 @@ public class ComposeActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                Log.d(TAG, "onFailure: " + error.getMessage(), error);
             }
         });
     }

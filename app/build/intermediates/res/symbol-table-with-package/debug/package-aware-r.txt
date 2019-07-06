@@ -1133,6 +1133,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id divider
 id edit_query
 id end
 id end_padder
@@ -1163,6 +1164,9 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageButton
+id imageButton2
+id imageButton3
 id info
 id invisible
 id italic
@@ -1283,6 +1287,8 @@ id tvAt
 id tvBody
 id tvCounter
 id tvDate
+id tvFav
+id tvRetweet
 id tvScreenName
 id tvTweet
 id tvUser
