@@ -1,5 +1,3 @@
-
-=======
 # Project 3 - *Twitter*
 
 **Twitter** is an android app that allows a user to view his Twitter timeline and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
@@ -76,4 +74,3 @@ The app was pretty fun to build. It was hard to implement some of the stretch fe
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
->>>>>>> 76bbafe6d27e037735804a2dc780da58cc4c8721
