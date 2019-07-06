@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 =======
 # Project 3 - *Twitter*
 
@@ -48,13 +48,13 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='TwitterGIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The app was pretty fun to build. It was hard to implement some of the stretch features, but I tried my best to implement the ones I felt were most interesting. It was hard to look through all the guides and extract the information I needed to make it unique to my project. 
 
 ## Open-source libraries used
 
@@ -63,7 +63,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2019] [Tara Bhatia]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
